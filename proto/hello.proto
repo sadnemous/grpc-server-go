@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package proto;
+
+// The go_package option specifies the import path for the generated files
+option go_package = "grpc-server-go/grpc;proto";
+
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+  string inp_name = 1;
+}
+
+message HelloResponse {
+  string out_message = 1;
+}
